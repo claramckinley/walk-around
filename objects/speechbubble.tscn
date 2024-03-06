@@ -1,0 +1,47 @@
+[gd_scene format=2]
+
+[node name="speechbubble" type="Node2D"]
+
+[node name="background" type="NinePatchRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="label" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="dialoguelabel" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="responsesmenu" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="pinup" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="pindown" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="smalltest" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="mediumtest" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="largetest" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="responsetemplate" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
