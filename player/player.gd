@@ -6,9 +6,9 @@ extends KinematicBody2D
 # var b = "text"
 
 var velocity = Vector2.ZERO
-var acc = 25
-var speed = 25
-var friction = 100
+var acc = 50
+var speed = 100
+var friction = 500
 var can_interact = false
 var target = null
 onready var sprite = $AnimatedSprite
@@ -35,24 +35,27 @@ func handle_acc(input_x_axis, input_y_axis, delta):
 	if input_y_axis != 0:
 		velocity.y = move_toward(velocity.y, speed * input_y_axis, acc * delta)
 		if velocity.y > 0:
-			sprite.play("down")
+			sprite.play("right")
 		else:
-			sprite.play("up")
+			sprite.play("left")
+#			sprite.play("down")
+#		else:
+#			sprite.play("up")
 	move_and_slide(velocity)
 	
 func apply_friction(input_x_axis, input_y_axis, delta):
 	if input_x_axis == 0:
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 		if sprite.animation == "right":
-			sprite.play("idleright")
+			sprite.play("right")
 		if sprite.animation == "left":
-			sprite.play("idleleft")
+			sprite.play("left")
 	if input_y_axis == 0:
 		velocity.y = move_toward(velocity.y, 0, friction * delta)
-		if sprite.animation == "up":
-			sprite.play("idleup")
-		if sprite.animation == "down":
-			sprite.play("idledown")
+#		if sprite.animation == "up":
+#			sprite.play("idleup")
+#		if sprite.animation == "down":
+#			sprite.play("idledown")
 	move_and_slide(velocity)
 	
 func check_interact():

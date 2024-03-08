@@ -7,7 +7,7 @@ var count = 0
 func _ready():
 	hide()
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("close_inventory"):
 		hide()
 		get_tree().paused = false

@@ -1,162 +1,128 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://room/furniture.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/interactable.tscn" type="PackedScene" id=3]
-[ext_resource path="res://room/TopDownHouse_FloorsAndWalls.png" type="Texture" id=4]
+[ext_resource path="res://room/bedroom_backdrop.png" type="Texture" id=2]
+[ext_resource path="res://room/furniture.tscn" type="PackedScene" id=3]
 [ext_resource path="res://cutscene/Cutscene.tscn" type="PackedScene" id=5]
+[ext_resource path="res://room/room.gd" type="Script" id=6]
+[ext_resource path="res://objects/interactable.tscn" type="PackedScene" id=7]
 
-[sub_resource type="TileSet" id=1]
-0/name = "TopDownHouse_FloorsAndWalls.png 0"
-0/texture = ExtResource( 4 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 50, 109, 0, 0 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "TopDownHouse_FloorsAndWalls.png 1"
-1/texture = ExtResource( 4 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 32, 80, 16, 16 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
-2/name = "TopDownHouse_FloorsAndWalls.png 2"
-2/texture = ExtResource( 4 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 16, 80, 64, 48 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
-2/z_index = 0
-3/name = "TopDownHouse_FloorsAndWalls.png 3"
-3/texture = ExtResource( 4 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 16, 80, 64, 48 )
-3/tile_mode = 1
-3/autotile/bitmask_mode = 0
-3/autotile/bitmask_flags = [  ]
-3/autotile/icon_coordinate = Vector2( 0, 0 )
-3/autotile/tile_size = Vector2( 16, 16 )
-3/autotile/spacing = 0
-3/autotile/occluder_map = [  ]
-3/autotile/navpoly_map = [  ]
-3/autotile/priority_map = [  ]
-3/autotile/z_index_map = [  ]
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
-3/z_index = 0
-4/name = "TopDownHouse_FloorsAndWalls.png 4"
-4/texture = ExtResource( 4 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 208, 80, 16, 16 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
-4/z_index = 0
-5/name = "TopDownHouse_FloorsAndWalls.png 5"
-5/texture = ExtResource( 4 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 32, 32, 16, 16 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
-5/z_index = 0
+[node name="room" type="StaticBody2D"]
+script = ExtResource( 6 )
 
-[node name="room" type="Node2D"]
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
-cell_size = Vector2( 16, 16 )
-cell_custom_transform = Transform2D( 64, 0, 0, 60, 0, 0 )
-format = 1
-tile_data = PoolIntArray( -110100607, 3, 0, -110035070, 3, 0, -109969534, 3, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 5, 0, 11, 5, 0, 12, 5, 0, 13, 5, 0, 14, 5, 0, 15, 5, 0, 16, 5, 0, 17, 5, 0, 18, 5, 0, 19, 5, 0, 20, 5, 0, 21, 5, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 65543, 5, 0, 65544, 5, 0, 65545, 5, 0, 65546, 5, 0, 65547, 5, 0, 65548, 5, 0, 65549, 5, 0, 65550, 5, 0, 65551, 5, 0, 65552, 5, 0, 65553, 5, 0, 65554, 5, 0, 65555, 5, 0, 65556, 5, 0, 65557, 5, 0, 131072, 5, 0, 131073, 5, 0, 131074, 5, 0, 131075, 5, 0, 131076, 5, 0, 131077, 5, 0, 131078, 5, 0, 131079, 5, 0, 131080, 5, 0, 131081, 5, 0, 131082, 5, 0, 131083, 5, 0, 131084, 5, 0, 131085, 5, 0, 131086, 5, 0, 131087, 5, 0, 131088, 5, 0, 131089, 5, 0, 131090, 5, 0, 131091, 5, 0, 131092, 5, 0, 131093, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 196616, 4, 0, 196617, 4, 0, 196618, 4, 0, 196619, 4, 0, 196620, 4, 0, 196621, 4, 0, 196622, 4, 0, 196623, 4, 0, 196624, 4, 0, 196625, 4, 0, 196626, 4, 0, 196627, 4, 0, 196629, 4, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 262152, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 4, 0, 262161, 4, 0, 262162, 4, 0, 262163, 4, 0, 262165, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 4, 0, 327689, 4, 0, 327690, 4, 0, 327691, 4, 0, 327692, 4, 0, 327693, 4, 0, 327694, 4, 0, 327695, 4, 0, 327696, 4, 0, 327697, 4, 0, 327698, 4, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 393216, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 4, 0, 393226, 4, 0, 393227, 4, 0, 393228, 4, 0, 393229, 4, 0, 393230, 4, 0, 393231, 4, 0, 393232, 4, 0, 393233, 4, 0, 393234, 4, 0, 393235, 4, 0, 393236, 4, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458765, 4, 0, 458766, 4, 0, 458767, 4, 0, 458768, 4, 0, 458769, 4, 0, 458770, 4, 0, 458771, 4, 0, 458772, 4, 0, 524288, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 4, 0, 524304, 4, 0, 524305, 4, 0, 524306, 4, 0, 524307, 4, 0, 589824, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0, 589837, 4, 0, 589838, 4, 0, 589839, 4, 0, 589840, 4, 0, 589841, 4, 0, 589842, 4, 0, 589843, 4, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 4, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 4, 0, 720896, 4, 0, 720897, 4, 0, 720898, 4, 0, 720899, 4, 0, 720900, 4, 0, 720901, 4, 0, 720902, 4, 0, 720903, 4, 0, 720904, 4, 0, 720905, 4, 0, 720906, 4, 0, 720907, 4, 0, 720908, 4, 0, 720909, 4, 0, 720910, 4, 0, 720911, 4, 0, 720912, 4, 0, 720913, 4, 0, 720914, 4, 0, 720915, 4, 0, 786442, 4, 0, 786444, 4, 0, 786445, 4, 0, 786446, 4, 0, 786448, 4, 0, 786449, 4, 0, 786450, 4, 0, 851978, 4, 0, 851980, 4, 0, 851981, 4, 0, 851984, 4, 0, 917515, 4, 0, 917516, 4, 0, 917519, 4, 0, 917520, 4, 0, 983052, 4, 0, 983053, 4, 0, 983054, 4, 0 )
-
-[node name="carpet" parent="." instance=ExtResource( 2 )]
-position = Vector2( 104, 111 )
-rotation = -1.55822
-scale = Vector2( 1, 1 )
-frame = 2
-
-[node name="bookcase" parent="." instance=ExtResource( 2 )]
-position = Vector2( 147, 34 )
-frame = 1
-
-[node name="bookcase2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 195, 34 )
-frame = 1
-
-[node name="bookcase3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 241, 34 )
-frame = 1
-
-[node name="bookcase4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 288, 35 )
-frame = 1
-
-[node name="couch" parent="." instance=ExtResource( 2 )]
-position = Vector2( 173, 63 )
-
-[node name="interactable" parent="." instance=ExtResource( 3 )]
-position = Vector2( 46, 100 )
-object_name = "window"
-idle = "barrel_idle"
-animated = "barrel_animated"
-action = 1
-
-[node name="interactable2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 100, 54 )
-object_name = "book"
-idle = "book_idle"
-animated = "book_animated"
-
-[node name="door" parent="." instance=ExtResource( 3 )]
-position = Vector2( 17, 37 )
-object_name = "door"
-idle = "door_idle"
-animated = "door_animated"
-action = 2
-
-[node name="player" parent="." groups=["player"] instance=ExtResource( 1 )]
-position = Vector2( 52, 51 )
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 2224.0
+margin_bottom = 1668.0
+rect_scale = Vector2( 0.47, 0.37 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 5
 
 [node name="Cutscene" parent="." instance=ExtResource( 5 )]
 visible = false
+
+[node name="window" parent="." instance=ExtResource( 7 )]
+position = Vector2( 594, 158 )
+action = 2
+frame = 14
+
+[node name="furniture" parent="window/furniture" index="0"]
+position = Vector2( -1, 0 )
+scale = Vector2( 0.277593, 0.277593 )
+
+[node name="rug" parent="." instance=ExtResource( 3 )]
+position = Vector2( 799, 383 )
+frame = 16
+
+[node name="furniture" parent="rug" index="0"]
+position = Vector2( 0, -1.00006 )
+scale = Vector2( 0.364089, 0.364089 )
+
+[node name="table" parent="." instance=ExtResource( 3 )]
+position = Vector2( 745, 221 )
+frame = 13
+
+[node name="shelf" parent="." instance=ExtResource( 3 )]
+position = Vector2( 403, 185 )
+frame = 15
+
+[node name="picture" parent="." instance=ExtResource( 3 )]
+position = Vector2( 273, 100 )
+rotation = 1.5708
+frame = 5
+
+[node name="bed" parent="." instance=ExtResource( 3 )]
+position = Vector2( 898, 241 )
+frame = 22
+
+[node name="stars" parent="." instance=ExtResource( 3 )]
+position = Vector2( 844, 72 )
+frame = 4
+
+[node name="furniture" parent="stars" index="0"]
+position = Vector2( -3, 2 )
+scale = Vector2( 0.3675, 0.3675 )
+
+[node name="lamp" parent="." instance=ExtResource( 7 )]
+position = Vector2( 742, 154 )
+action = 4
+
+[node name="floorlamp" parent="." instance=ExtResource( 7 )]
+position = Vector2( 154, 198 )
+action = 4
+on_sprite = 19
+off_sprite = 21
+frame = 21
+
+[node name="dresser" parent="." instance=ExtResource( 3 )]
+position = Vector2( -17, 363 )
+frame = 20
+
+[node name="globe" parent="." instance=ExtResource( 7 )]
+position = Vector2( 56, 178 )
+action = 1
+frame = 8
+
+[node name="furniture" parent="globe/furniture" index="0"]
+position = Vector2( -1, -6.10352e-05 )
+scale = Vector2( 0.192373, 0.204844 )
+
+[node name="bear" parent="." instance=ExtResource( 7 )]
+position = Vector2( 354, 168 )
+action = 5
+on_sprite = 3
+off_sprite = 2
+frame = 2
+
+[node name="bunny" parent="." instance=ExtResource( 7 )]
+position = Vector2( 724, 381 )
+action = 5
+on_sprite = 17
+off_sprite = 18
+frame = 18
+
+[node name="trapdoor" parent="." instance=ExtResource( 7 )]
+position = Vector2( 281, 494 )
+action = 3
+on_sprite = 12
+off_sprite = 11
+frame = 12
+
+[node name="furniture" parent="trapdoor/furniture" index="0"]
+position = Vector2( 2, 0 )
+scale = Vector2( 0.251223, 0.267335 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 7, 217, 51, 165, 160, 167, 913, 150, 1025, 280, 1044, 302, 1054, 375, 1061, -28, -20, -25, -234, 126, -212, 786, 1209, 777, 1055, 376, 1021, 276, 1021, 370, 1016, 592, 6, 595 )
+
+[node name="player" parent="." groups=["player"] instance=ExtResource( 1 )]
+position = Vector2( 445, 381 )
+
+[editable path="window"]
+[editable path="window/furniture"]
+[editable path="rug"]
+[editable path="stars"]
+[editable path="globe"]
+[editable path="globe/furniture"]
+[editable path="trapdoor"]
+[editable path="trapdoor/furniture"]

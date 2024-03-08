@@ -6,14 +6,15 @@ onready var wave_timer = $WaveTimer
 
 func _ready():
 	animation_player.connect("animation_finished", self, "finished_cutscene")
-	play()
 
-func play():
+func play(which_cutscene):
 	get_tree().paused = true
 	visible = true
+	animation_player.playback_speed = 5
+	animation_player.play(which_cutscene)
 	wave_timer.start()
 	
-func finished_cutscene(animation):
+func finished_cutscene(_animation):
 	get_tree().paused = false
 	visible = false
 
