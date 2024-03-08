@@ -6,7 +6,7 @@ extends KinematicBody2D
 # var b = "text"
 
 var velocity = Vector2.ZERO
-var acc = 50
+var acc = 100
 var speed = 100
 var friction = 500
 var can_interact = false
@@ -62,11 +62,11 @@ func check_interact():
 	if target != null:
 		can_interact = false
 		timer.start()
-		if PlayerData.inventory.has(target.object_name):
-			var curr_num = PlayerData.inventory[target.object_name]
-			PlayerData.inventory[target.object_name] = curr_num + 1
-		else:
-			PlayerData.inventory[target.object_name] = 1
+#		if PlayerData.inventory.has(target.object_name):
+#			var curr_num = PlayerData.inventory[target.object_name]
+#			PlayerData.inventory[target.object_name] = curr_num + 1
+#		else:
+#			PlayerData.inventory[target.object_name] = 1
 		target.action()
 
 func open_inventory():

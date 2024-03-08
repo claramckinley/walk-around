@@ -2,7 +2,7 @@ extends Node2D
 
 
 onready var animation = $AnimatedSprite
-var frame = 0
+export var frame = -1
 var locked = false
 
 signal clicked(which_star, locked)
@@ -10,7 +10,8 @@ signal clicked(which_star, locked)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	frame = rand_range(0, 6)
+	if frame == -1:
+		frame = rand_range(0, 6)
 	animation.frame = frame
 #	$AnimationPlayer.play("stars")
 	

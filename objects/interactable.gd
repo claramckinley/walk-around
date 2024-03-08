@@ -13,64 +13,60 @@ enum Game{
 	STARS
 }
 
-signal start_cutscene(which_cutscene)
-signal start_star_game(star_game)
+signal start_star_game()
+signal update_label(text, object)
 
-export (String) var object_name
 onready var text_label = $Label
-export (String) var idle
-export (String) var animated
-export (Action) var action = Action.TAKE
+export (Action) var action_type = Action.TAKE
 export var on_sprite = 0
 export var off_sprite = 1
 onready var which_sprite = $furniture.get_child(0)
-export var frame = 1
-export (String) var which_game = Game.STARS
+export (int) var frame
 export var unlocked = false
+export var text = "this is fresh text"
 
 var talking = false
+var signaled = false
 
 func _ready():
 	which_sprite.frame = frame
-	text_label.text = object_name
 	text_label.visible = false
 	
 func action():
-	match(action):
+	match(action_type):
 		Action.TAKE:
-			print("you took " + str(object_name))
-			queue_free()
-		Action.LOOK:
-			print("you looked at " + str(object_name))
+			self.visible = false
+#		Action.LOOK:
+#			print("you looked at " + str(object_name))
 		Action.LOOK_OUT:
-			print("you looked out " + str(object_name))
-			var star_instance = load("res://puzzles/star_game.tscn").instance()
-			get_parent().add_child(star_instance)
-			emit_signal("start_star_game", star_instance)
-#			emit_signal("start_cutscene", "waves")
-#			match(which_game):
-#				Game.STARS:
-#					emit_signal("start_star_game")
+			emit_signal("start_star_game")
 		Action.OPEN:
 			if unlocked:
-#				if which_sprite.frame == off_sprite:
-#					which_sprite.frame = on_sprite
-#				else:
 				which_sprite.frame = off_sprite
 		Action.TALK:
-			if talking == false:
-				talking = true
+			$TalkAnimationTimer.start()
 		Action.ONOFF:
 			if which_sprite.frame == off_sprite:
 				which_sprite.frame = on_sprite
 			else:
 				which_sprite.frame = off_sprite
-func _process(delta):
-	if talking:
+	if !signaled:
+		$TalkTimer.start()
 		if which_sprite.frame == off_sprite:
-			which_sprite.frame = on_sprite
-		else:
-			which_sprite.frame = off_sprite
+			emit_signal("update_label", text, self)
+		signaled = true
 
 func _on_TalkTimer_timeout():
-	talking = false
+	$TalkTimer.stop()
+	$TalkAnimationTimer.stop()
+	if action_type == Action.TALK:
+		which_sprite.frame = off_sprite
+		if self != null:
+			talking = false
+			signaled = false
+
+func _on_TalkAnimationTimer_timeout():
+	if which_sprite.frame == off_sprite:
+		which_sprite.frame = on_sprite
+	else:
+		which_sprite.frame = off_sprite

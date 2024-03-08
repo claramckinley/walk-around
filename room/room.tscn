@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://room/bedroom_backdrop.png" type="Texture" id=2]
 [ext_resource path="res://room/furniture.tscn" type="PackedScene" id=3]
+[ext_resource path="res://room/dialogue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://cutscene/Cutscene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://room/room.gd" type="Script" id=6]
 [ext_resource path="res://objects/interactable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://room/TransitionScene.tscn" type="PackedScene" id=8]
 
 [node name="room" type="StaticBody2D"]
 script = ExtResource( 6 )
@@ -23,15 +25,18 @@ visible = false
 
 [node name="window" parent="." instance=ExtResource( 7 )]
 position = Vector2( 594, 158 )
-action = 2
+action_type = 2
+on_sprite = 14
+off_sprite = 14
 frame = 14
+text = ""
 
 [node name="furniture" parent="window/furniture" index="0"]
 position = Vector2( -1, 0 )
 scale = Vector2( 0.277593, 0.277593 )
 
 [node name="rug" parent="." instance=ExtResource( 3 )]
-position = Vector2( 799, 383 )
+position = Vector2( 802, 383 )
 frame = 16
 
 [node name="furniture" parent="rug" index="0"]
@@ -56,7 +61,7 @@ position = Vector2( 898, 241 )
 frame = 22
 
 [node name="stars" parent="." instance=ExtResource( 3 )]
-position = Vector2( 844, 72 )
+position = Vector2( 937, 81 )
 frame = 4
 
 [node name="furniture" parent="stars" index="0"]
@@ -65,48 +70,69 @@ scale = Vector2( 0.3675, 0.3675 )
 
 [node name="lamp" parent="." instance=ExtResource( 7 )]
 position = Vector2( 742, 154 )
-action = 4
+action_type = 4
+frame = 1
+text = "its a little dark in here"
+
+[node name="key" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1139, 267 )
+on_sprite = 23
+off_sprite = 23
+frame = 23
+text = "the key!"
 
 [node name="floorlamp" parent="." instance=ExtResource( 7 )]
-position = Vector2( 154, 198 )
-action = 4
+position = Vector2( 181, 202 )
+action_type = 4
 on_sprite = 19
 off_sprite = 21
 frame = 21
+text = "its a little too dark in here..."
 
-[node name="dresser" parent="." instance=ExtResource( 3 )]
-position = Vector2( -17, 363 )
+[node name="bear" parent="." instance=ExtResource( 7 )]
+position = Vector2( 354, 168 )
+action_type = 5
+on_sprite = 3
+off_sprite = 2
+frame = 2
+text = "I’m bright but not clever. I burn but dont simmer. I'm up all night but never sleep."
+
+[node name="bunny" parent="." instance=ExtResource( 7 )]
+position = Vector2( 669, 489 )
+action_type = 5
+on_sprite = 17
+off_sprite = 18
+frame = 18
+text = "its darkest when I'm bright. What am I?"
+
+[node name="dresser" parent="." instance=ExtResource( 7 )]
+position = Vector2( 48, 352 )
+action_type = 3
+on_sprite = 20
+off_sprite = 24
 frame = 20
+unlocked = true
+text = "oh...its a sock"
 
 [node name="globe" parent="." instance=ExtResource( 7 )]
-position = Vector2( 56, 178 )
-action = 1
+position = Vector2( 23, 227 )
+action_type = 1
+on_sprite = 8
+off_sprite = 8
 frame = 8
+text = "wow its my globe"
 
 [node name="furniture" parent="globe/furniture" index="0"]
 position = Vector2( -1, -6.10352e-05 )
 scale = Vector2( 0.192373, 0.204844 )
 
-[node name="bear" parent="." instance=ExtResource( 7 )]
-position = Vector2( 354, 168 )
-action = 5
-on_sprite = 3
-off_sprite = 2
-frame = 2
-
-[node name="bunny" parent="." instance=ExtResource( 7 )]
-position = Vector2( 724, 381 )
-action = 5
-on_sprite = 17
-off_sprite = 18
-frame = 18
-
 [node name="trapdoor" parent="." instance=ExtResource( 7 )]
 position = Vector2( 281, 494 )
-action = 3
+action_type = 3
 on_sprite = 12
 off_sprite = 11
 frame = 12
+text = "its the way out of my room"
 
 [node name="furniture" parent="trapdoor/furniture" index="0"]
 position = Vector2( 2, 0 )
@@ -116,7 +142,15 @@ scale = Vector2( 0.251223, 0.267335 )
 polygon = PoolVector2Array( 7, 217, 51, 165, 160, 167, 913, 150, 1025, 280, 1044, 302, 1054, 375, 1061, -28, -20, -25, -234, 126, -212, 786, 1209, 777, 1055, 376, 1021, 276, 1021, 370, 1016, 592, 6, 595 )
 
 [node name="player" parent="." groups=["player"] instance=ExtResource( 1 )]
-position = Vector2( 445, 381 )
+position = Vector2( 926, 274 )
+
+[node name="dialogue" parent="." instance=ExtResource( 4 )]
+mouse_filter = 2
+
+[node name="TransitionScene" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[connection signal="transitioned" from="TransitionScene" to="." method="_on_TransitionScene_transitioned"]
 
 [editable path="window"]
 [editable path="window/furniture"]

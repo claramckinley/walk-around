@@ -34,6 +34,9 @@ shape = SubResource( 6 )
 shape = SubResource( 7 )
 
 [node name="TalkTimer" type="Timer" parent="."]
-wait_time = 5.0
+
+[node name="TalkAnimationTimer" type="Timer" parent="."]
+wait_time = 0.25
 
 [connection signal="timeout" from="TalkTimer" to="." method="_on_TalkTimer_timeout"]
+[connection signal="timeout" from="TalkAnimationTimer" to="." method="_on_TalkAnimationTimer_timeout"]
