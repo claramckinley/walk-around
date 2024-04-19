@@ -1,13 +1,290 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://objects/interactable.gd" type="Script" id=1]
-[ext_resource path="res://room/furniture.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hall/hall_objects_2.png" type="Texture" id=2]
+[ext_resource path="res://bathroom/bathroom_objects_1.png" type="Texture" id=3]
+[ext_resource path="res://hall/hall_objects_5.png" type="Texture" id=4]
+[ext_resource path="res://room/bedroom_objects_4.png" type="Texture" id=5]
+[ext_resource path="res://room/bedroom_objects_3.png" type="Texture" id=6]
+[ext_resource path="res://room/bedroom_objects_7.png" type="Texture" id=7]
+[ext_resource path="res://room/bedroom_objects_5.png" type="Texture" id=8]
+[ext_resource path="res://room/bedroom_objects_6.png" type="Texture" id=9]
+[ext_resource path="res://room/bedroom_objects.png" type="Texture" id=10]
+[ext_resource path="res://room/bedroom_objects_2.png" type="Texture" id=11]
+[ext_resource path="res://hall/hall_objects_3.png" type="Texture" id=12]
+[ext_resource path="res://bathroom/bathroom_objects_3.png" type="Texture" id=13]
+[ext_resource path="res://bathroom/bathroom_objects_4.png" type="Texture" id=14]
+[ext_resource path="res://yard/yard_objects_1.png" type="Texture" id=15]
+[ext_resource path="res://yard/yard_objects_2.png" type="Texture" id=16]
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 556, 150, 556, 500 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1060, 0, 530, 556 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 14, 556, 530, 556 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 564, 556, 530, 556 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 556, 741, 556, 741 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 1085, 556, 500 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 556, 1085, 556, 500 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1112, 1080, 556, 540 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 1620, 556, 540 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 556, 1620, 556, 540 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1112, 1620, 556, 540 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 70, 1526, 799, 698 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 869, 1526, 799, 698 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 556, 741 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 703, 741, 900, 741 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 96, 741, 600, 741 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 565, 24, 700, 741 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 834, 741 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 834, 0, 834, 741 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 884, 764, 783, 1300 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 500, 0, 1100, 2224 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 83, 0, 600, 1250 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 668, 41, 1000, 1500 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 1112, 0, 556, 741 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 50, 0, 1100, 2224 )
+
+[sub_resource type="SpriteFrames" id=47]
+animations = [ {
+"frames": [ SubResource( 42 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 43 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 36 ), SubResource( 37 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 40 ), SubResource( 46 ), SubResource( 41 ), SubResource( 38 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "bedroom",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 1668, 1112 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1112, 1668, 1112 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 1668, 2224 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 556, 2224 )
+
+[sub_resource type="StreamTexture" id=6]
+load_path = "res://.import/hall_objects_4.png-a0ca3546d43d919d8320a447142bf140.stex"
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = SubResource( 6 )
+region = Rect2( 0, 0, 1469, 807 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 1469, 807 )
+
+[sub_resource type="SpriteFrames" id=48]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 4 ), SubResource( 5 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "furniture",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 3 )
+region = Rect2( 556, 0, 556, 741 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 3 )
+region = Rect2( 556, 700, 556, 1000 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 450, 550 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 600, 450, 550 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 480, 0, 300, 600 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 480, 600, 300, 600 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 35, 807, 478 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 489, 807, 489 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 14 )
+region = Rect2( 0, 978, 807, 489 )
+
+[sub_resource type="SpriteFrames" id=51]
+animations = [ {
+"frames": [ SubResource( 49 ), SubResource( 50 ), SubResource( 58 ), SubResource( 59 ), SubResource( 56 ), SubResource( 57 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ) ],
+"loop": true,
+"name": "furniture",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 700, 2224 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 15 )
+region = Rect2( 700, 0, 900, 2224 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 834, 0, 834, 1112 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 834, 1112, 834, 1112 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 834, 650 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 650, 834, 650 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 1300, 834, 650 )
+
+[sub_resource type="SpriteFrames" id=65]
+animations = [ {
+"frames": [ SubResource( 63 ), SubResource( 64 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ) ],
+"loop": true,
+"name": "furniture",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=52]
 radius = 36.0
 height = 26.0
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=53]
 radius = 36.0
 height = 26.0
 
@@ -22,16 +299,39 @@ margin_top = -21.0
 margin_right = 52.0
 margin_bottom = -7.0
 
-[node name="furniture" parent="." instance=ExtResource( 2 )]
+[node name="bedroom" type="AnimatedSprite" parent="."]
+position = Vector2( -3.8147e-06, -5.72205e-06 )
+scale = Vector2( 0.272037, 0.272037 )
+frames = SubResource( 47 )
+animation = "bedroom"
+frame = 23
+
+[node name="hall" type="AnimatedSprite" parent="."]
+position = Vector2( 1.90735e-06, 3 )
+scale = Vector2( 0.146583, 0.163332 )
+frames = SubResource( 48 )
+animation = "furniture"
+
+[node name="bathroom" type="AnimatedSprite" parent="."]
+position = Vector2( -1, 0 )
+scale = Vector2( 0.277428, 0.260712 )
+frames = SubResource( 51 )
+animation = "furniture"
+
+[node name="yard" type="AnimatedSprite" parent="."]
+position = Vector2( -21, 29 )
+scale = Vector2( 0.261786, 0.230041 )
+frames = SubResource( 65 )
+animation = "furniture"
 
 [node name="Area2D" type="Area2D" parent="." groups=["object"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["object"]]
-shape = SubResource( 6 )
+shape = SubResource( 52 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 7 )
+shape = SubResource( 53 )
 
 [node name="TalkTimer" type="Timer" parent="."]
 

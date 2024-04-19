@@ -25,9 +25,6 @@ func check_answer():
 	if answer.size() == player_answer.size():
 		if check_equality():
 			$StarTimer.start()
-			print("you win")
-		else:
-			print("you lose")
 			
 func check_equality():
 	for star in answer:

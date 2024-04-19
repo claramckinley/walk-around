@@ -13,7 +13,7 @@ margin_right = 1013.0
 margin_bottom = 589.0
 grow_vertical = 2
 script = ExtResource( 2 )
-text = "wow its still nighttime"
+text = ""
 
 [node name="Label" type="Label" parent="."]
 anchor_top = 1.0
@@ -23,9 +23,8 @@ margin_left = 10.0
 margin_top = -42.0
 margin_right = 10.0
 grow_vertical = 0
-custom_colors/font_color = Color( 0.607843, 0.647059, 0.827451, 1 )
+custom_colors/font_color = Color( 0.521569, 0.14902, 0.14902, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "hey"
 align = 1
 valign = 1
 autowrap = true

@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://hall/hall_backdrop.png" type="Texture" id=2]
+[ext_resource path="res://hall/hall_object_1.png" type="Texture" id=3]
+[ext_resource path="res://hall/hall_furniture.tscn" type="PackedScene" id=4]
+[ext_resource path="res://common/portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://bathroom/Bathroom.tscn" type="PackedScene" id=6]
+[ext_resource path="res://hall/Hall.gd" type="Script" id=7]
+[ext_resource path="res://room/TransitionScene.tscn" type="PackedScene" id=8]
+[ext_resource path="res://room/room.tscn" type="PackedScene" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 46.6857
+
+[node name="Hall" type="StaticBody2D"]
+script = ExtResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 2224.0
+margin_bottom = 1668.0
+rect_scale = Vector2( 0.47, 0.37 )
+texture = ExtResource( 2 )
+
+[node name="window" parent="." instance=ExtResource( 4 )]
+position = Vector2( 502, 251 )
+scale = Vector2( 1.5, 1.5 )
+frame = 4
+
+[node name="furniture" parent="window" index="0"]
+position = Vector2( 0.666687, 0.666626 )
+scale = Vector2( 0.248601, 0.26259 )
+
+[node name="trees_one" type="Sprite" parent="."]
+position = Vector2( 464, 316 )
+scale = Vector2( 0.47, 0.37 )
+texture = ExtResource( 3 )
+
+[node name="lights_off" type="ColorRect" parent="."]
+margin_right = 1035.0
+margin_bottom = 614.0
+color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+
+[node name="dark_window" parent="." instance=ExtResource( 4 )]
+position = Vector2( 502, 251 )
+scale = Vector2( 1.5, 1.5 )
+frame = 5
+
+[node name="furniture" parent="dark_window" index="0"]
+position = Vector2( 0.666687, 0.666626 )
+scale = Vector2( 0.248601, 0.26259 )
+
+[node name="TransitionScene" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="trapdoor" parent="." instance=ExtResource( 4 )]
+position = Vector2( 854, 33 )
+rotation = 0.0998787
+frame = 1
+
+[node name="ladder" parent="." instance=ExtResource( 4 )]
+position = Vector2( 813, 319 )
+rotation = -0.058895
+scale = Vector2( 1.5, 1.5 )
+frame = 2
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 834, 129 )
+scale = Vector2( 1, 1 )
+
+[node name="light" parent="." instance=ExtResource( 4 )]
+position = Vector2( 371, 284 )
+rotation = 0.0288783
+scale = Vector2( 1.5, 1.5 )
+frame = 3
+
+[node name="furniture" parent="light" index="0"]
+position = Vector2( -0.622192, -0.00222778 )
+scale = Vector2( 0.264476, 0.315442 )
+
+[node name="Area2D" type="Area2D" parent="light" groups=["object"]]
+position = Vector2( 12.0125, 115.701 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="light/Area2D"]
+position = Vector2( -28.9669, -18.4036 )
+shape = SubResource( 1 )
+
+[node name="trees_two" type="Sprite" parent="."]
+visible = false
+position = Vector2( 560, 398 )
+scale = Vector2( 0.47, 0.37 )
+texture = ExtResource( 3 )
+
+[node name="portal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 16, 2 )
+going_to = ExtResource( 6 )
+
+[node name="portal2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 444, 13 )
+rotation = -1.56257
+going_to = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 5 )
+polygon = PoolVector2Array( 14, -1, 14, 552, 1004, 563, 1001, 404, 950, 373, 903.373, 327.875, 919, 13, 739, 4, 729.044, 344.987, 682, 384, 543, 420, 498, 363, 460, 303, 273, 309, 219, 376, 160, 431, 110, 369, 4, 79, 1004, -60, 1214, 726, -80, 739, -85, -24 )
+
+[connection signal="transitioned" from="TransitionScene" to="." method="_on_TransitionScene_transitioned"]
+
+[editable path="window"]
+[editable path="dark_window"]
+[editable path="light"]

@@ -31,10 +31,6 @@ off_sprite = 14
 frame = 14
 text = ""
 
-[node name="furniture" parent="window/furniture" index="0"]
-position = Vector2( -1, 0 )
-scale = Vector2( 0.277593, 0.277593 )
-
 [node name="rug" parent="." instance=ExtResource( 3 )]
 position = Vector2( 802, 383 )
 frame = 16
@@ -107,6 +103,7 @@ text = "its darkest when I'm bright. What am I?"
 
 [node name="dresser" parent="." instance=ExtResource( 7 )]
 position = Vector2( 48, 352 )
+scale = Vector2( 0.759999, 1 )
 action_type = 3
 on_sprite = 20
 off_sprite = 24
@@ -115,33 +112,27 @@ unlocked = true
 text = "oh...its a sock"
 
 [node name="globe" parent="." instance=ExtResource( 7 )]
-position = Vector2( 23, 227 )
+position = Vector2( 52, 178 )
+scale = Vector2( 0.720001, 0.76 )
 action_type = 1
 on_sprite = 8
 off_sprite = 8
 frame = 8
 text = "wow its my globe"
 
-[node name="furniture" parent="globe/furniture" index="0"]
-position = Vector2( -1, -6.10352e-05 )
-scale = Vector2( 0.192373, 0.204844 )
-
 [node name="trapdoor" parent="." instance=ExtResource( 7 )]
 position = Vector2( 281, 494 )
+scale = Vector2( 0.839998, 0.919998 )
 action_type = 3
 on_sprite = 12
 off_sprite = 11
 frame = 12
 text = "its the way out of my room"
 
-[node name="furniture" parent="trapdoor/furniture" index="0"]
-position = Vector2( 2, 0 )
-scale = Vector2( 0.251223, 0.267335 )
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 7, 217, 51, 165, 160, 167, 913, 150, 1025, 280, 1044, 302, 1054, 375, 1061, -28, -20, -25, -234, 126, -212, 786, 1209, 777, 1055, 376, 1021, 276, 1021, 370, 1016, 592, 6, 595 )
 
-[node name="player" parent="." groups=["player"] instance=ExtResource( 1 )]
+[node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 926, 274 )
 
 [node name="dialogue" parent="." instance=ExtResource( 4 )]
@@ -153,10 +144,7 @@ visible = false
 [connection signal="transitioned" from="TransitionScene" to="." method="_on_TransitionScene_transitioned"]
 
 [editable path="window"]
-[editable path="window/furniture"]
 [editable path="rug"]
 [editable path="stars"]
 [editable path="globe"]
-[editable path="globe/furniture"]
 [editable path="trapdoor"]
-[editable path="trapdoor/furniture"]

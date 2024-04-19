@@ -1,0 +1,970 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://bathroom/bathroom_puzzle.png" type="Texture" id=1]
+[ext_resource path="res://bathroom/pipe.gd" type="Script" id=2]
+[ext_resource path="res://bathroom/pipe_game.gd" type="Script" id=3]
+[ext_resource path="res://bathroom/bathroom_puzzle_1.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 147, 117 )
+
+[node name="pipe_game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 460, 272 )
+scale = Vector2( 1.32082, 1.22647 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 191, 1315, 932, 797 )
+
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 1599, 235 )
+scale = Vector2( 1.32082, 1.22647 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 191, 1315, 932, 797 )
+
+[node name="Background3" type="Sprite" parent="."]
+position = Vector2( 2738, 184 )
+scale = Vector2( 1.32082, 1.22647 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 191, 1315, 932, 797 )
+
+[node name="level_one" type="Node2D" parent="."]
+position = Vector2( 36.4151, -38 )
+
+[node name="one" type="Sprite" parent="level_one"]
+position = Vector2( 117.585, 147 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/one"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/one/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="two" type="Sprite" parent="level_one"]
+position = Vector2( 277.585, 164 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/two"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/two/Area2D"]
+position = Vector2( -7, 7 )
+shape = SubResource( 1 )
+
+[node name="three" type="Sprite" parent="level_one"]
+position = Vector2( 468.585, 161 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/three"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/three/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="four" type="Sprite" parent="level_one"]
+position = Vector2( 607.585, 165 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 687, 964, 241, 210 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_TWO" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/four"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/four/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="five" type="Sprite" parent="level_one"]
+position = Vector2( 833.585, 172 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/five"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/five/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="six" type="Sprite" parent="level_one"]
+position = Vector2( 143.585, 330 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 687, 964, 241, 210 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/six"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/six/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="seven" type="Sprite" parent="level_one"]
+position = Vector2( 297.585, 308 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 676, 51, 292, 334 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/seven"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/seven/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="eight" type="Sprite" parent="level_one"]
+position = Vector2( 468.585, 323 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1214, 38, 335, 375 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_ONE", "POS_TWO", "POS_THREE", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/eight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/eight/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="nine" type="Sprite" parent="level_one"]
+position = Vector2( 634.585, 336 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 676, 51, 292, 334 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_ONE" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/nine"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/nine/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="ten" type="Sprite" parent="level_one"]
+position = Vector2( 813.585, 330 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1214, 38, 335, 375 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_ONE", "POS_TWO", "POS_THREE", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/ten"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/ten/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="eleven" type="Sprite" parent="level_one"]
+position = Vector2( 157.585, 499 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/eleven"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/eleven/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="twelve" type="Sprite" parent="level_one"]
+position = Vector2( 306.585, 495 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/twelve"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/twelve/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="thirteen" type="Sprite" parent="level_one"]
+position = Vector2( 470.585, 494 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_ONE" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/thirteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/thirteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="fourteen" type="Sprite" parent="level_one"]
+position = Vector2( 639.585, 490 )
+rotation = 0.0575293
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_ONE", "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/fourteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/fourteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="fifteen" type="Sprite" parent="level_one"]
+position = Vector2( 836.585, 495 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_TWO" ]
+
+[node name="Area2D" type="Area2D" parent="level_one/fifteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_one/fifteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="level_two" type="Node2D" parent="."]
+position = Vector2( 1090, -40 )
+
+[node name="one" type="Sprite" parent="level_two"]
+position = Vector2( 117.585, 147 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/one"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/one/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="two" type="Sprite" parent="level_two"]
+position = Vector2( 277.585, 164 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/two"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/two/Area2D"]
+position = Vector2( -7, 7 )
+shape = SubResource( 1 )
+
+[node name="three" type="Sprite" parent="level_two"]
+position = Vector2( 468.585, 161 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/three"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/three/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="four" type="Sprite" parent="level_two"]
+position = Vector2( 607.585, 165 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 687, 964, 241, 210 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_TWO" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/four"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/four/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="five" type="Sprite" parent="level_two"]
+position = Vector2( 833.585, 172 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/five"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/five/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="six" type="Sprite" parent="level_two"]
+position = Vector2( 126, 331 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/six"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/six/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="seven" type="Sprite" parent="level_two"]
+position = Vector2( 297.585, 308 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 676, 51, 292, 334 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/seven"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/seven/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="eight" type="Sprite" parent="level_two"]
+position = Vector2( 468.585, 323 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1214, 38, 335, 375 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_ONE", "POS_TWO", "POS_THREE", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/eight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/eight/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="nine" type="Sprite" parent="level_two"]
+position = Vector2( 634.585, 336 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 676, 51, 292, 334 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_ONE" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/nine"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/nine/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="ten" type="Sprite" parent="level_two"]
+position = Vector2( 813.585, 330 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1214, 38, 335, 375 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_ONE", "POS_TWO", "POS_THREE", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/ten"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/ten/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="eleven" type="Sprite" parent="level_two"]
+position = Vector2( 133, 504 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/eleven"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/eleven/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="twelve" type="Sprite" parent="level_two"]
+position = Vector2( 306.585, 495 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/twelve"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/twelve/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="thirteen" type="Sprite" parent="level_two"]
+position = Vector2( 470.585, 494 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_ONE" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/thirteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/thirteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="fourteen" type="Sprite" parent="level_two"]
+position = Vector2( 639.585, 490 )
+rotation = 0.0575293
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_ONE", "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/fourteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/fourteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="fifteen" type="Sprite" parent="level_two"]
+position = Vector2( 836.585, 495 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_TWO" ]
+
+[node name="Area2D" type="Area2D" parent="level_two/fifteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_two/fifteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="level_three" type="Node2D" parent="."]
+position = Vector2( 2134, -30 )
+
+[node name="one" type="Sprite" parent="level_three"]
+position = Vector2( 117.585, 147 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/one"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/one/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="two" type="Sprite" parent="level_three"]
+position = Vector2( 277.585, 164 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/two"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/two/Area2D"]
+position = Vector2( -7, 7 )
+shape = SubResource( 1 )
+
+[node name="three" type="Sprite" parent="level_three"]
+position = Vector2( 468.585, 161 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/three"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/three/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="four" type="Sprite" parent="level_three"]
+position = Vector2( 607.585, 165 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 687, 964, 241, 210 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_TWO" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/four"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/four/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="five" type="Sprite" parent="level_three"]
+position = Vector2( 833.585, 172 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/five"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/five/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="six" type="Sprite" parent="level_three"]
+position = Vector2( 126, 331 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/six"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/six/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="seven" type="Sprite" parent="level_three"]
+position = Vector2( 297.585, 308 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 676, 51, 292, 334 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/seven"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/seven/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="eight" type="Sprite" parent="level_three"]
+position = Vector2( 468.585, 323 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1214, 38, 335, 375 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_ONE", "POS_TWO", "POS_THREE", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/eight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/eight/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="nine" type="Sprite" parent="level_three"]
+position = Vector2( 634.585, 336 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 676, 51, 292, 334 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_ONE" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/nine"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/nine/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="ten" type="Sprite" parent="level_three"]
+position = Vector2( 813.585, 330 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1214, 38, 335, 375 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_ONE", "POS_TWO", "POS_THREE", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/ten"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/ten/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="eleven" type="Sprite" parent="level_three"]
+position = Vector2( 133, 504 )
+rotation = -3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/eleven"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/eleven/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="twelve" type="Sprite" parent="level_three"]
+position = Vector2( 306.585, 495 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_FOUR"
+answer = [ "POS_TWO", "POS_FOUR" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/twelve"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/twelve/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="thirteen" type="Sprite" parent="level_three"]
+position = Vector2( 470.585, 494 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_TWO"
+answer = [ "POS_ONE" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/thirteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/thirteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="fourteen" type="Sprite" parent="level_three"]
+position = Vector2( 639.585, 490 )
+rotation = 0.0575293
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+script = ExtResource( 2 )
+direction = "POS_ONE"
+answer = [ "POS_ONE", "POS_THREE" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/fourteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/fourteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="fifteen" type="Sprite" parent="level_three"]
+position = Vector2( 836.585, 495 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 907, 291, 270 )
+script = ExtResource( 2 )
+direction = "POS_THREE"
+answer = [ "POS_TWO" ]
+
+[node name="Area2D" type="Area2D" parent="level_three/fifteen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level_three/fifteen/Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -15.5849, 114 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 1038, 114 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 1039.42, 284.75 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 1042, 474 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( 2084.42, 129.75 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite8" type="Sprite" parent="."]
+position = Vector2( 2085.83, 300.5 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite9" type="Sprite" parent="."]
+position = Vector2( 2088.42, 489.75 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite10" type="Sprite" parent="."]
+position = Vector2( 3145.42, 136.75 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite11" type="Sprite" parent="."]
+position = Vector2( 3146.83, 307.5 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite12" type="Sprite" parent="."]
+position = Vector2( 3149.42, 496.75 )
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 192, 624 )
+rotation = 1.5708
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 680, 620 )
+rotation = 1.5708
+scale = Vector2( 0.511468, 0.511468 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 143, 126, 334, 218 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 512, 300 )
+smoothing_enabled = true
+
+[connection signal="check_answer" from="level_one/one" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/one/Area2D" to="level_one/one" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/two" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/two/Area2D" to="level_one/two" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/three" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/three/Area2D" to="level_one/three" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/four" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/four/Area2D" to="level_one/four" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/five" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/five/Area2D" to="level_one/five" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/six" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/six/Area2D" to="level_one/six" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/seven" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/seven/Area2D" to="level_one/seven" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/eight" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/eight/Area2D" to="level_one/eight" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/nine" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/nine/Area2D" to="level_one/nine" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/ten" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/ten/Area2D" to="level_one/ten" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/eleven" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/eleven/Area2D" to="level_one/eleven" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/twelve" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/twelve/Area2D" to="level_one/twelve" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/thirteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/thirteen/Area2D" to="level_one/thirteen" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/fourteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/fourteen/Area2D" to="level_one/fourteen" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_one/fifteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_one/fifteen/Area2D" to="level_one/fifteen" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/one" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/one/Area2D" to="level_two/one" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/two" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/two/Area2D" to="level_two/two" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/three" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/three/Area2D" to="level_two/three" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/four" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/four/Area2D" to="level_two/four" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/five" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/five/Area2D" to="level_two/five" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/six" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/six/Area2D" to="level_two/six" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/seven" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/seven/Area2D" to="level_two/seven" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/eight" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/eight/Area2D" to="level_two/eight" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/nine" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/nine/Area2D" to="level_two/nine" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/ten" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/ten/Area2D" to="level_two/ten" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/eleven" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/eleven/Area2D" to="level_two/eleven" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/twelve" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/twelve/Area2D" to="level_two/twelve" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/thirteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/thirteen/Area2D" to="level_two/thirteen" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/fourteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/fourteen/Area2D" to="level_two/fourteen" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_two/fifteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_two/fifteen/Area2D" to="level_two/fifteen" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/one" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/one/Area2D" to="level_three/one" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/two" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/two/Area2D" to="level_three/two" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/three" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/three/Area2D" to="level_three/three" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/four" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/four/Area2D" to="level_three/four" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/five" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/five/Area2D" to="level_three/five" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/six" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/six/Area2D" to="level_three/six" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/seven" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/seven/Area2D" to="level_three/seven" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/eight" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/eight/Area2D" to="level_three/eight" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/nine" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/nine/Area2D" to="level_three/nine" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/ten" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/ten/Area2D" to="level_three/ten" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/eleven" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/eleven/Area2D" to="level_three/eleven" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/twelve" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/twelve/Area2D" to="level_three/twelve" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/thirteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/thirteen/Area2D" to="level_three/thirteen" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/fourteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/fourteen/Area2D" to="level_three/fourteen" method="_on_Area2D_input_event"]
+[connection signal="check_answer" from="level_three/fifteen" to="." method="check_answer"]
+[connection signal="input_event" from="level_three/fifteen/Area2D" to="level_three/fifteen" method="_on_Area2D_input_event"]

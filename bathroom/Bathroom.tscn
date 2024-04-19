@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://bathroom/bathroom_backdrop.png" type="Texture" id=2]
+[ext_resource path="res://bathroom/bathroom_objects_2.png" type="Texture" id=3]
+[ext_resource path="res://objects/interactable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://room/dialogue.tscn" type="PackedScene" id=5]
+[ext_resource path="res://bathroom/Bathroom.gd" type="Script" id=6]
+[ext_resource path="res://bathroom/bathroom_objects_4.png" type="Texture" id=7]
+[ext_resource path="res://room/TransitionScene.tscn" type="PackedScene" id=8]
+
+[node name="Bathroom" type="StaticBody2D"]
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 2224.0
+margin_bottom = 1668.0
+rect_scale = Vector2( 0.47, 0.37 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+
+[node name="rug" type="Sprite" parent="."]
+position = Vector2( 305, 382 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 232, 1151, 389, 151 )
+
+[node name="rug2" type="Sprite" parent="."]
+position = Vector2( 736, 421 )
+rotation = -3.03422
+scale = Vector2( 0.420752, 0.727975 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 232, 1151, 389, 151 )
+
+[node name="mirror" parent="." instance=ExtResource( 4 )]
+position = Vector2( 56, 258 )
+scale = Vector2( 1.36, 2.92 )
+action_type = 5
+on_sprite = 5
+off_sprite = 4
+frame = 4
+text = "mirror mirror on the wall this is magic woohoo"
+which_room = 2
+
+[node name="sink" parent="." instance=ExtResource( 4 )]
+position = Vector2( 677, 269 )
+scale = Vector2( 0.990005, 1.15 )
+action_type = 5
+on_sprite = 1
+frame = 1
+text = "this is a sink"
+which_room = 2
+
+[node name="toilet" parent="." instance=ExtResource( 4 )]
+position = Vector2( 777, 321 )
+scale = Vector2( 1.41, 1.53 )
+action_type = 6
+off_sprite = 0
+text = "this is a toilet"
+which_room = 2
+
+[node name="tub" parent="." instance=ExtResource( 4 )]
+position = Vector2( 248, 264 )
+scale = Vector2( 2.5, 2.26 )
+action_type = 4
+on_sprite = 7
+off_sprite = 6
+frame = 6
+text = "this is a tub"
+which_room = 2
+
+[node name="bathroom" parent="tub" index="3"]
+position = Vector2( 19.2, 3.09732 )
+
+[node name="curtain" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 213, 220 )
+scale = Vector2( 3, 3 )
+action_type = 4
+on_sprite = 2
+off_sprite = 3
+frame = 3
+text = "this is a sink"
+which_room = 2
+remove_collision = true
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 492, 287 )
+
+[node name="water" type="TextureRect" parent="."]
+margin_right = 2224.0
+margin_bottom = 1668.0
+rect_scale = Vector2( 0.47, 0.37 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+
+[node name="dialogue" parent="." instance=ExtResource( 5 )]
+mouse_filter = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -1, 0, -3, 512, 126, 300, 741, 254, 1025, 572, 1022, 568, 10, 557, -12, 528, -14, 641, 1118, 642, 1112, -82 )
+
+[node name="TransitionScene" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="transitioned" from="TransitionScene" to="." method="_on_TransitionScene_transitioned"]
+
+[editable path="tub"]

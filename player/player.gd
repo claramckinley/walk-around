@@ -76,7 +76,6 @@ func open_inventory():
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("object"):
 		target = area.get_parent()
-		target.text_label.visible = true
 		can_interact = true
 
 
@@ -84,7 +83,6 @@ func _on_Area2D_area_exited(area):
 	if area.is_in_group("object"):
 		if area.get_parent() == target:
 			can_interact = false
-			target.text_label.visible = false
 			target = null
 
 

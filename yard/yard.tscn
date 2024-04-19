@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://yard/yard_background.png" type="Texture" id=2]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+
+[node name="yard" type="StaticBody2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 2224.0
+margin_bottom = 1668.0
+rect_scale = Vector2( 0.47, 0.37 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+
+[node name="statue" parent="." instance=ExtResource( 1 )]
+position = Vector2( 123, 277 )
+action_type = 5
+off_sprite = 0
+which_room = 3
+
+[node name="bust" parent="." instance=ExtResource( 1 )]
+position = Vector2( 678, 284 )
+action_type = 5
+on_sprite = 2
+off_sprite = 2
+frame = 2
+which_room = 3
+
+[node name="chest" parent="." instance=ExtResource( 1 )]
+position = Vector2( 789, 466 )
+scale = Vector2( 1.25, 1.25 )
+action_type = 5
+on_sprite = 4
+off_sprite = 4
+frame = 4
+which_room = 3
+
+[node name="vase1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 299, 308 )
+action_type = 5
+on_sprite = 5
+off_sprite = 5
+frame = 5
+which_room = 3
+
+[node name="vase2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 472, 284 )
+action_type = 5
+on_sprite = 6
+off_sprite = 6
+frame = 6
+which_room = 3
+
+[node name="statue2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 830, 293 )
+scale = Vector2( -1, 1 )
+action_type = 5
+on_sprite = 1
+frame = 1
+which_room = 3
+
+[node name="pillar" parent="." instance=ExtResource( 1 )]
+position = Vector2( 135, 472 )
+rotation = 3.14159
+action_type = 5
+on_sprite = 3
+off_sprite = 3
+frame = 3
+which_room = 3
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 409, 390 )

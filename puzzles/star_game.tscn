@@ -22,7 +22,7 @@ color = Color( 0.0352941, 0.607843, 0.784314, 1 )
 position = Vector2( 370, 277 )
 
 [node name="star" parent="star_collection" instance=ExtResource( 1 )]
-position = Vector2( -172, 43 )
+position = Vector2( -154, 51 )
 frame = 1
 
 [node name="star2" parent="star_collection" instance=ExtResource( 1 )]
@@ -30,27 +30,27 @@ position = Vector2( -104, 110 )
 frame = 0
 
 [node name="star3" parent="star_collection" instance=ExtResource( 1 )]
-position = Vector2( -59, 27 )
+position = Vector2( -58, 30 )
 frame = 1
 
 [node name="star4" parent="star_collection" instance=ExtResource( 1 )]
-position = Vector2( 24, 137 )
+position = Vector2( 3, 138 )
 frame = 0
 
 [node name="star5" parent="star_collection" instance=ExtResource( 1 )]
-position = Vector2( 136, 181 )
+position = Vector2( 101, 170 )
 frame = 1
 
 [node name="star6" parent="star_collection" instance=ExtResource( 1 )]
-position = Vector2( 187, 71 )
+position = Vector2( 142, 76 )
 frame = 2
 
 [node name="star8" parent="star_collection" instance=ExtResource( 1 )]
-position = Vector2( 17, -50 )
+position = Vector2( 14, -32 )
 frame = 2
 
 [node name="star9" parent="star_collection" instance=ExtResource( 1 )]
-position = Vector2( -125, -92 )
+position = Vector2( -125, -59 )
 frame = 2
 
 [node name="star10" parent="." instance=ExtResource( 1 )]
